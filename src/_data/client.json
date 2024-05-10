@@ -1,0 +1,15 @@
+{
+	"name": "template4",
+	"email": "mauritz303@gmail.com",
+	"phoneForTel": "555-779-4407",
+	"phoneFormatted": "(555) 779-4407",
+	"address": {
+		"lineOne": "First Address Line",
+		"lineTwo": "Second Address Line",
+		"city": "Pretoria",
+		"province": "Gauteng",
+		"zip": "0181",
+		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+	},
+	"domain": "www.domain.app"
+}
