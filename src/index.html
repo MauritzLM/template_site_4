@@ -9,22 +9,162 @@ script: ''
 ---
 
 <!-- HERO SECTION -->
-<h1>{{ title }}</h1>
+<section id="hero">
+
+  <div class="container">
+    <picture>
+          <!-- Mobile image -->
+          <source media="(max-width: 600px)" srcset=""/>
+          <!-- Desktop image -->
+          <source media="(min-width: 601px)" srcset=""/>
+
+          <!-- Fallback image -->
+          <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="eager"/> 
+   </picture>
+      <h1>{{ title }}</h1>
+      <p>l"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="#faq">Learn more</a>
+  </div>
+
+</section>
 
 
 <!-- SERVICES SECTION -->
+<section id="solutions">
+
+   <div class="container">
+     <h2>Our solutions</h2>
+
+     <div class="solution-wrapper">
+
+          <div class="solution">
+             <h3>Solution</h3>
+             <p>Eu scelerisque felis imperdiet proin. Proin libero nunc consequat interdum varius sit. Ultrices gravida dictum fusce ut placerat.</p>
+             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+          </div>
+
+           <div class="solution">
+             <h3>Solution</h3>
+             <p>Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi. Vel pretium lectus quam id leo.</p>
+             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+          </div>
+
+           <div class="solution">
+             <h3>Solution</h3>
+             <p>In metus vulputate eu scelerisque felis imperdiet proin. Lorem donec massa sapien faucibus et molestie ac feugiat.</p>
+             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+          </div>
+
+           <div class="solution">
+             <h3>Solution</h3>
+             <p>Sagittis vitae et leo duis. In arcu cursus euismod quis viverra nibh cras.</p>
+             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+          </div>
+
+     </div>
+
+   </div>
+
+</section>
 
 
 <!-- ABOUT SECTION -->
+<section id="about">
+
+     <div class="container">
+      <span>About us</span>
+      <h2>Who we are</h2>
+
+      <div class="content">
+         <picture>
+          <!-- Mobile image -->
+          <source media="(max-width: 600px)" srcset=""/>
+          <!-- Desktop image -->
+          <source media="(min-width: 601px)" srcset=""/>
+
+          <!-- Fallback image -->
+          <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
+        </picture>
+
+        <p>Elit ut aliquam purus sit amet. Morbi non arcu risus quis varius. Eros in cursus turpis massa tincidunt dui ut.</p>
+        <p>Suspendisse sed nisi lacus sed viverra. Amet massa vitae tortor  condimentum. Nisi lacus sed viverra tellus in hac habitasse. Imperdiet  proin fermentum leo vel.</p>
+      </div>
+
+     </div>
+
+</section>
 
 
 <!-- WHY US SECTION -->
+<section id="why-us">
+
+   <div class="container">
+         <span>Why us</span>
+         <h2>Section title</h2>
+
+        <div class="content">
+           <picture>
+              <!-- Mobile image -->
+              <source media="(max-width: 600px)" srcset=""/>
+              <!-- Desktop image -->
+              <source media="(min-width: 601px)" srcset=""/>
+
+              <!-- Fallback image -->
+              <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
+          </picture>
+
+            <ul>
+              <li>
+                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <span>Aliquet bibendum enim facilisis gravida neque convallis a cras.</span>
+              </li>
+
+              <li>
+                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <span>Viverra adipiscing at in tellus integer feugiat scelerisque.</span>
+              </li>
+
+              <li>
+                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <span>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras.</span>
+              </li>
+            <ul>
+
+        </div>
+   </div>
+
+
+</section>
 
 
 <!-- REVIEWS SECTION -->
+<section id="reviews">
+
+   <div class="container">
+      <span>Reviews</span>
+      <h2>What our clients say</h2>
+
+     {# create review card for each review #}
+      {% for review in reviews %}
+         <div class="review">
+            <div class="review-text">
+             <p>{{ review.text }}</p>
+            </div> 
+             <div class="review-client">
+                 <p>{{ review.client_name }}</p>
+                 <p>{{ review.client_company }}</p>
+             </div>
+         </div>
+
+      {% endfor %}
+
+   </div>
+</section>
 
 
 <!-- FAQ SECTION -->
+{% include 'components/faq.html' %}
 
 
 <!-- CONTACT SECTION -->
+{% include 'components/contactForm.html' %}
