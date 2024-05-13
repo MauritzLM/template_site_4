@@ -1,4 +1,44 @@
+/* HERO SECTION */
+#hero {
+    padding-top: 7em;
 
-h1 {
-    color: aqua;
+    picture {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // .hero-text {
+    //     h1 {
+    //         color: aqua;
+    //     }
+    // }
+}
+
+
+/* FAQ SECTION */
+#faq {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        .faq-item {
+            width: 100%;
+            cursor: pointer;
+            padding: 1em;
+
+            img {
+                float: right;
+            }
+
+            button {
+                background: transparent;
+                border: none;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+        }
+    }
 }
