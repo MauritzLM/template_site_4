@@ -5,7 +5,7 @@ preloadImg: ''
 permalink: '/'
 layout: layouts/base.html
 stylesheet: css/home.css
-script: '' 
+script: '/assets/js/script.js'
 ---
 
 <!-- HERO SECTION -->
@@ -14,16 +14,18 @@ script: ''
   <div class="container">
     <picture>
           <!-- Mobile image -->
-          <source media="(max-width: 600px)" srcset=""/>
+          <source media="(max-width: 600px)" srcset="/assets/images/hero-mobile.webp"/>
           <!-- Desktop image -->
-          <source media="(min-width: 601px)" srcset=""/>
+          <source media="(min-width: 601px)" srcset="/assets/images/hero-desktop.webp"/>
 
           <!-- Fallback image -->
-          <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="eager"/> 
+          <img src="/assets/images/hero-desktop.webp" alt="" aria-hidden="true" decoding="async" width="1920" height="1200" loading="eager"/> 
    </picture>
+   <div class="hero-text">
       <h1>{{ title }}</h1>
       <p>l"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <a href="#faq">Learn more</a>
+   </div>   
   </div>
 
 </section>
@@ -40,25 +42,25 @@ script: ''
           <div class="solution">
              <h3>Solution</h3>
              <p>Eu scelerisque felis imperdiet proin. Proin libero nunc consequat interdum varius sit. Ultrices gravida dictum fusce ut placerat.</p>
-             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+             <img src="/assets/svgs/build.svg" alt="" aria-hidden="true" decoding="async" height="35" width="35"/>
           </div>
 
            <div class="solution">
              <h3>Solution</h3>
              <p>Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi. Vel pretium lectus quam id leo.</p>
-             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+             <img src="/assets/svgs/satellite_alt.svg" alt="" aria-hidden="true" decoding="async" height="35" width="35"/>
           </div>
 
            <div class="solution">
              <h3>Solution</h3>
              <p>In metus vulputate eu scelerisque felis imperdiet proin. Lorem donec massa sapien faucibus et molestie ac feugiat.</p>
-             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+             <img src="/assets/svgs/heart_plus.svg" alt="" aria-hidden="true" decoding="async" height="35" width="35"/>
           </div>
 
            <div class="solution">
              <h3>Solution</h3>
              <p>Sagittis vitae et leo duis. In arcu cursus euismod quis viverra nibh cras.</p>
-             <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+             <img src="/assets/svgs/experiment.svg" alt="" aria-hidden="true" decoding="async" height="35" width="35"/>
           </div>
 
      </div>
@@ -115,17 +117,17 @@ script: ''
 
             <ul>
               <li>
-                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
                 <span>Aliquet bibendum enim facilisis gravida neque convallis a cras.</span>
               </li>
 
               <li>
-                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
                 <span>Viverra adipiscing at in tellus integer feugiat scelerisque.</span>
               </li>
 
               <li>
-                <img src="" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
                 <span>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras.</span>
               </li>
             <ul>
