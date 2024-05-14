@@ -95,6 +95,21 @@ h1 {
     font-size: var(--headerFontSize);
 }
 
+section {
+    .container {
+        .heading {
+            span {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            h2 {
+                margin-top: .2em;
+            }
+        }
+    }
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -105,8 +120,17 @@ a {
     color: var(--bodyTextColor);
 }
 
+/* buttons */
 button {
     cursor: pointer;
+    border: none;
+}
+
+.cs-button {
+    background-color: var(--grey-500);
+    padding: .4em .7em;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
 /* Hidden Screen reader skip nav button */
@@ -134,6 +158,7 @@ button {
     grid-template-areas: "logo number toggle";
     align-items: center;
     background-color: #fff;
+    z-index: 1000;
 
     .nav-logo {
         grid-area: logo;
@@ -273,6 +298,7 @@ button {
         grid-area: number;
         display: flex;
         justify-self: end;
+        gap: 5px;
 
         img {
             height: 25px;
@@ -331,4 +357,79 @@ button {
 }
 
 
+
 /* FOOTER STYLES */
+footer {
+    .footer-section-top {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "logo"
+            "line"
+            "links";
+        gap: 2em;
+        justify-items: center;
+
+        .logo {
+            grid-area: logo;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            grid-area: links;
+            margin: 0;
+            align-items: center;
+
+            li {
+                a {
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    
+                }
+            }
+        }
+
+        .line {
+            width: 90%;
+            height: 1px;
+            background-color: var(--grey-800);
+            grid-area: line;
+        }
+    }
+
+    /* contact info & social-links */
+    .footer-section-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        margin-top: 3em;
+
+        .contact-details {
+            h3 {
+                text-transform: uppercase;
+                font-size: 1rem;
+                margin-bottom: 2em;
+            }
+
+            .contact-wrapper {
+                  
+                .item {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    gap: 2em;
+                    margin-top: 1em;
+
+                    div {
+                        display: flex;
+                        gap: 1em;
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            align-self: center;
+        }
+    }
+}
