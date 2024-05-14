@@ -24,14 +24,14 @@ script: '/assets/js/script.js'
    <div class="hero-text">
       <h1>{{ title }}</h1>
       <p>l"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="#faq">Learn more</a>
+      <a class="cs-button" href="#faq">Learn more</a>
    </div>   
   </div>
 
 </section>
 
 
-<!-- SERVICES SECTION -->
+<!-- SOLUTIONS SECTION -->
 <section id="solutions">
 
    <div class="container">
@@ -59,7 +59,7 @@ script: '/assets/js/script.js'
 
            <div class="solution">
              <h3>Solution</h3>
-             <p>Sagittis vitae et leo duis. In arcu cursus euismod quis viverra nibh cras.</p>
+             <p>Sagittis vitae et leo duis. In arcu cursus euismod quis viverra nibh cras. Ultrices gravida dictum fusce ut placerat.</p>
              <img src="/assets/svgs/experiment.svg" alt="" aria-hidden="true" decoding="async" height="35" width="35"/>
           </div>
 
@@ -74,23 +74,30 @@ script: '/assets/js/script.js'
 <section id="about">
 
      <div class="container">
-      <span>About us</span>
-      <h2>Who we are</h2>
 
-      <div class="content">
-         <picture>
-          <!-- Mobile image -->
-          <source media="(max-width: 600px)" srcset=""/>
-          <!-- Desktop image -->
-          <source media="(min-width: 601px)" srcset=""/>
+        <div class="section-box"></div>
+      
+         <div class="heading"> 
+           <span>About us</span>
+           <h2>Who we are</h2>
+         </div>
 
-          <!-- Fallback image -->
-          <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
-        </picture>
+         <div class="content">
+            <picture>
+              <!-- Mobile image -->
+              <source media="(max-width: 600px)" srcset="/assets/images/about-mobile.webp"/>
+              <!-- Desktop image -->
+              <source media="(min-width: 601px)" srcset="/assets/images/about-desktop.webp"/>
 
-        <p>Elit ut aliquam purus sit amet. Morbi non arcu risus quis varius. Eros in cursus turpis massa tincidunt dui ut.</p>
-        <p>Suspendisse sed nisi lacus sed viverra. Amet massa vitae tortor  condimentum. Nisi lacus sed viverra tellus in hac habitasse. Imperdiet  proin fermentum leo vel.</p>
-      </div>
+              <!-- Fallback image -->
+              <img src="/assets/images/about-desktop.webp" alt="warehouse interior" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
+            </picture>
+            
+            <div>
+               <p>Elit ut aliquam purus sit amet. Morbi non arcu risus quis varius. Eros in cursus turpis massa tincidunt dui ut.</p>
+               <p>Suspendisse sed nisi lacus sed viverra. Amet massa vitae tortor  condimentum. Nisi lacus sed viverra tellus in hac habitasse. Imperdiet  proin fermentum leo vel.</p>
+            </div>
+        </div>
 
      </div>
 
@@ -101,33 +108,38 @@ script: '/assets/js/script.js'
 <section id="why-us">
 
    <div class="container">
-         <span>Why us</span>
-         <h2>Section title</h2>
+
+      <div class="section-box"></div>
+
+      <div class="heading">
+        <span>Why us</span>
+        <h2>Section title</h2>
+      </div>  
 
         <div class="content">
            <picture>
               <!-- Mobile image -->
-              <source media="(max-width: 600px)" srcset=""/>
+              <source media="(max-width: 600px)" srcset="/assets/images/whyus-mobile.webp"/>
               <!-- Desktop image -->
-              <source media="(min-width: 601px)" srcset=""/>
+              <source media="(min-width: 601px)" srcset="/assets/images/whyus-desktop.webp"/>
 
               <!-- Fallback image -->
-              <img src="" alt="" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
+              <img src="/assets/images/whyus-desktop.webp" alt="handshake" aria-hidden="true" decoding="async" width="" height="" loading="lazy"/> 
           </picture>
 
             <ul>
               <li>
-                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="30" width="30"/>
                 <span>Aliquet bibendum enim facilisis gravida neque convallis a cras.</span>
               </li>
 
               <li>
-                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="30" width="30"/>
                 <span>Viverra adipiscing at in tellus integer feugiat scelerisque.</span>
               </li>
 
               <li>
-                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="" width=""/>
+                <img src="/assets/svgs/check_circle.svg" alt="" aria-hidden="true" decoding="async" height="30" width="30"/>
                 <span>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras.</span>
               </li>
             <ul>
@@ -143,22 +155,25 @@ script: '/assets/js/script.js'
 <section id="reviews">
 
    <div class="container">
-      <span>Reviews</span>
-      <h2>What our clients say</h2>
 
+     <div class="heading">
+       <span>Reviews</span>
+       <h2>What our clients say</h2>
+     </div> 
+  
+     <div class="review-wrapper">
      {# create review card for each review #}
       {% for review in reviews %}
          <div class="review">
-            <div class="review-text">
-             <p>{{ review.text }}</p>
-            </div> 
+             <p class="review-text">{{ review.text }}</p>
              <div class="review-client">
-                 <p>{{ review.client_name }}</p>
-                 <p>{{ review.client_company }}</p>
+                 <span>- {{ review.client_name }}</span>
+                 {# <span>{{ review.client_company }}</span> #}
              </div>
          </div>
 
       {% endfor %}
+     </div> 
 
    </div>
 </section>
