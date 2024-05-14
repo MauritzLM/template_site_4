@@ -9,11 +9,156 @@
         }
     }
 
-    // .hero-text {
-    //     h1 {
-    //         color: aqua;
-    //     }
-    // }
+    .hero-text {
+        text-align: center;
+
+        p {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .cs-button {
+            display: block;
+            padding: .7em;
+            width: 260px;
+            margin: auto;
+            margin-top: 2em;
+        }
+    }
+}
+
+/* SOLUTIONS SECTION */
+#solutions {
+    .container {
+        h2 {
+            margin: 0;
+        }
+
+        .solution-wrapper {
+            margin-top: 3em;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            justify-items: center;
+
+            .solution {
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 2em 1.5em;
+                max-width: 350px;
+                position: relative;
+
+                h3 {
+                    margin-top: 0;
+                }
+
+                img {
+                    position: absolute;
+                    right: 1em;
+                    bottom: .5em;
+                }
+            }
+        }
+    }
+}
+
+
+/* ABOUT SECTION */
+#about {
+    .container {
+        position: relative;
+
+        .section-box {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background-color: var(--grey-700);
+            top: -1.8em;
+            left: -1em;
+            z-index: -10;
+        }
+
+        .heading {
+            color: var(--grey-100);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            picture {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+
+    }
+}
+
+
+/* WHY US SECTION */
+#why-us {
+    .container {
+
+        .content {
+
+            picture {
+                display: none;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+                margin-top: 3em;
+
+                li {
+                    display: flex;
+                    gap: 1em;
+                }
+            }
+        }
+    }
+}
+
+/* REVIEWS SECTION */
+#reviews {
+    .container {
+
+        .review-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            align-items: center;
+            margin-top: 3em;
+
+            .review {
+                padding: 1.5em;
+                background-color: #fff;
+                border-radius: 10px;
+                max-width: 350px;
+
+                .review-text {
+                    margin-top: 0;
+                }
+
+                .review-client {
+                    text-align: right;
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -23,11 +168,15 @@
         display: flex;
         flex-direction: column;
         gap: 1.5em;
+        max-width: 650px;
+        margin: auto;
 
         .faq-item {
             width: 100%;
             cursor: pointer;
             padding: 1em;
+            background-color: #fff;
+            border-radius: 10px;
 
             img {
                 float: right;
@@ -38,6 +187,58 @@
                 border: none;
                 font-weight: 600;
                 font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+/* CONTACT FORM */
+#contact {
+    background-color: var(--grey-700);
+
+    .container {
+        .cs-text {
+            text-align: center;
+            color: var(--grey-100);
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            width: 320px;
+            margin: auto;
+            align-items: center;
+
+
+            div {
+                width: 100%;
+
+                label {
+                    font-weight: 600;
+                    display: block;
+                    margin-bottom: .6em;
+                    color: var(--grey-100);
+                }
+
+                input {
+                    font: inherit;
+                    padding: .5em;
+                    width: 100%;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+            }
+
+            .cs-button {
+                padding: 1em;
+                width: 100%;
+                margin-top: 3em;
             }
         }
     }
