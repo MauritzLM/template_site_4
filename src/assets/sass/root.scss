@@ -3,6 +3,18 @@
 /* VARIABLES */
 :root {
 
+    /* Primary */
+    --primary-50: #ECEFF1;
+    --primary-100: #CFD8DC;
+    --primary-200: #B0BEC5;
+    --primary-300: #90A4AE;
+    --primary-400: #78909C;
+    --primary-500: #607D8B;
+    --primary-600: #546E7A;
+    --primary-700: #455A64;
+    --primary-800: #37474F;
+    --primary-900: #263238;
+
     /* greys */
     --grey-50: #FAFAFA;
     --grey-100: #F5F5F5;
@@ -18,7 +30,7 @@
     --headerFontSize: clamp(1.9375rem, 4.2vw, 3.5rem);
     --headingFontSize: clamp(1.6rem, 3vw, 2.4rem);
 
-    --bodyBackgroundColor: var(--grey-50);
+    --bodyBackgroundColor: var(--grey-100);
     --bodyTextColor: var(--grey-900);
 }
 
@@ -74,12 +86,21 @@ html {
 body {
     margin: 0;
     background-color: var(--bodyBackgroundColor);
+    color: var(--bodyTextColor);
 }
 
 /* section, footer padding */
 section,
 footer {
-    padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    padding: clamp(3.75rem, 7.82vw, 6.25rem) 0;
+}
+
+section {
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
 }
 
 h1,
@@ -95,12 +116,17 @@ h1 {
     font-size: var(--headerFontSize);
 }
 
+h2 {
+    font-size: var(--headingFontSize);
+}
+
 section {
     .container {
         .heading {
             span {
                 text-transform: uppercase;
                 font-weight: 600;
+                font-size: 1.1rem;
             }
 
             h2 {
@@ -127,7 +153,8 @@ button {
 }
 
 .cs-button {
-    background-color: var(--grey-500);
+    background-color: var(--primary-500);
+    color: var(--grey-50);
     padding: .4em .7em;
     font-weight: 600;
     border-radius: 5px;
@@ -312,6 +339,7 @@ button {
     #cs-navigation {
         grid-template-areas: "logo nav-links";
         grid-template-columns: 1fr 1.5fr;
+        padding: 1em 2em;
 
         .nav-phone {
             position: absolute;
@@ -360,7 +388,11 @@ button {
 
 /* FOOTER STYLES */
 footer {
+    background-color: var(--primary-50);
+
     .footer-section-top {
+        width: 90%;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: "logo"
@@ -385,21 +417,23 @@ footer {
                 a {
                     font-weight: 600;
                     text-transform: uppercase;
-                    
+
                 }
             }
         }
 
         .line {
-            width: 90%;
+            width: 100%;
             height: 1px;
-            background-color: var(--grey-800);
+            background-color: var(--primary-900);
             grid-area: line;
         }
     }
 
     /* contact info & social-links */
     .footer-section-bottom {
+        width: 90%;
+        margin: auto;
         display: flex;
         flex-direction: column;
         gap: 3em;
@@ -413,23 +447,74 @@ footer {
             }
 
             .contact-wrapper {
-                  
+                max-width: 500px;
+
                 .item {
                     display: grid;
                     grid-template-columns: 1fr 2fr;
                     gap: 2em;
                     margin-top: 1em;
+                    font-size: 1.1rem;
 
                     div {
                         display: flex;
-                        gap: 1em;
+                        gap: 10px;
+
                     }
+
                 }
             }
         }
 
         .social-links {
             align-self: center;
+        }
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 700px) {
+    footer {
+        .footer-section-top {
+            grid-template-areas: "logo links"
+            "line line";
+            gap: 1em;
+
+            .logo {
+                justify-self: start;
+            }
+
+            ul {
+                flex-direction: row;
+            }
+        }
+
+        .footer-section-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1em;
+
+            // .contact-details {
+            //     display: flex;
+            // }
+        }
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 1023px) {
+    footer {
+
+        .footer-section-bottom {
+            .contact-details {
+                display: flex;
+                gap: 3em;
+
+                h3 {
+                    width: 120px;
+                    align-self: center;
+                }
+            }
         }
     }
 }
