@@ -31,7 +31,7 @@
 }
 
 /* desktop */
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1200px) {
     #hero {
         padding-top: 12em;
 
@@ -92,7 +92,7 @@
         .solution-wrapper {
             margin-top: 3em;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1em;
             justify-items: center;
 
@@ -104,7 +104,7 @@
                 position: relative;
 
                 h3 {
-                    margin-top: 0;
+                    margin: 0;
                 }
 
                 img {
@@ -123,6 +123,38 @@
         .container {
             h2 {
                 text-align: center;
+            }
+        }
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 1023px) {
+    #solutions {
+        .container {
+            .solution-wrapper {
+                grid-template-areas: "one two three"
+                    ". four .";
+                grid-template-columns: 1fr 1fr 1fr;
+                // row-gap: 3em;
+
+                .solution {
+                    &:nth-last-of-type(1) {
+                        grid-area: one;
+                    }
+
+                    &:nth-last-of-type(2) {
+                        grid-area: two;
+                    }
+
+                    &:nth-last-of-type(3) {
+                        grid-area: three;
+                    }
+
+                    &:nth-last-of-type(4) {
+                        grid-area: four;
+                    }
+                }
             }
         }
     }
@@ -252,6 +284,7 @@
 
                 li {
                     display: flex;
+                    align-items: center;
                     gap: 1em;
                 }
             }
@@ -274,7 +307,7 @@
                     position: relative;
                     display: initial;
                     order: 1;
-                    width: 40%;
+                    width: 50%;
 
                     .section-box {
                         background-color: var(--primary-900);
@@ -287,14 +320,15 @@
                     }
                 }
 
-                // ul {
+                ul {
 
+                    align-self: start;
 
-                //     li {
-                //         display: flex;
-                //         gap: 1em;
-                //     }
-                // }
+                    //  li {
+                    //      display: flex;
+                    //      gap: 1em;
+                    //  }
+                }
             }
         }
     }
@@ -324,7 +358,7 @@
 
         .review-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5em;
             justify-items: center;
             margin-top: 3em;
@@ -354,9 +388,17 @@
 /* tablet */
 @media screen and (min-width: 813px) {
     #reviews {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 0;
+
         .container {
             .review-wrapper {
+                margin-top: 6em;
+
                 .review {
+                    font-size: 1.1rem;
+                    padding: 1.8em;
+                    max-width: 400px;
+
                     &:nth-of-type(1) {
                         justify-self: end;
                     }
@@ -376,20 +418,21 @@
     .container {
         h2 {
             text-align: center;
+            margin: 1.5em 0;
         }
 
         .faq-wrapper {
             display: flex;
             flex-direction: column;
             gap: 1.5em;
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
-            margin-top: 3em;
+            padding: 2.5em 0;
 
             .faq-item {
                 width: 100%;
                 cursor: pointer;
-                padding: 1em;
+                padding: 1.2em;
                 background-color: #fff;
                 border-radius: 10px;
 
@@ -431,7 +474,7 @@
         form {
             display: flex;
             flex-direction: column;
-            gap: 1em;
+            gap: 1.5em;
             max-width: 450px;
             margin: auto;
             align-items: center;
@@ -441,16 +484,16 @@
                 width: 100%;
 
                 label {
-                    font-weight: 600;
                     display: block;
                     margin-bottom: .6em;
                     color: var(--grey-100);
+                    text-transform: capitalize;
                 }
 
                 input,
                 textarea {
                     font: inherit;
-                    padding: .5em;
+                    padding: .7em .5em;
                     width: 100%;
                     border: none;
                     border-radius: 5px;
@@ -461,7 +504,7 @@
             .cs-button {
                 padding: 1em;
                 width: 100%;
-                margin-top: 2em;
+                margin-top: 1em;
             }
         }
     }
